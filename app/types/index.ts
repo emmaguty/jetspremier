@@ -9,12 +9,12 @@ export type SafeJets = Omit<
 
 export type SafeReservation = Omit<
   Reservation,
-  "createdAt" | "startDate" | "endDate" | "jets"
+  "createdAt" | "startDate" | "endDate" | "jet"
 > & {
   createdAt: string;
   startDate: string;
   endDate: string;
-  jets: SafeJets;
+  jet: SafeJets;
 }
 
 

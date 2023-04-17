@@ -1,12 +1,13 @@
 'use client';
 
+import { Range } from "react-date-range";
+
 import Button from "../Button";
 import Calendar from "../Inputs/Calendar";
-import { Range } from "react-date-range";
 
 interface JetReservationProps {
     price: number;
-    dateRange: Range;
+    dateRange: Range,
     totalPrice: number;
     onChangeDate: (value: Range) => void;
     onSubmit: () => void;
@@ -16,12 +17,12 @@ interface JetReservationProps {
 
 const JetReservation: React.FC<JetReservationProps> = ({
     price,
-    dateRange,
-    totalPrice,
-    onChangeDate,
-    onSubmit,
-    disabled,
-    disabledDates
+  dateRange,
+  totalPrice,
+  onChangeDate,
+  onSubmit,
+  disabled,
+  disabledDates
 }) => {
     return (
         <div className="bg-white rounded-xl border-[1px]
@@ -39,7 +40,8 @@ const JetReservation: React.FC<JetReservationProps> = ({
             <Calendar 
                 value={dateRange}
                 disabledDates={disabledDates}
-                onChange={(value) => onChangeDate(value.selection)}
+                onChange={(value) => 
+                  onChangeDate(value.selection)}
             />
             <hr />
             <div className="p-4">

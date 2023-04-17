@@ -6,9 +6,9 @@ import { toast } from "react-hot-toast";
 import { Range } from "react-date-range";
 import { useRouter } from "next/navigation";
 import { differenceInDays, eachDayOfInterval } from "date-fns";
+
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeJets, SafeReservation, SafeUser } from "@/app/types";
-import { Reservation } from "@prisma/client";
 
 import Container from "@/app/components/Container/Container";
 import { categories } from "@/app/components/Navbar/Categories";
@@ -23,7 +23,7 @@ const initialDateRange = {
 };
 
 interface JetClientProps {
-    reservations?: Reservation[];
+    reservations?: SafeReservation[];
     jet: SafeJets & {
         user: SafeUser;
     };
@@ -43,20 +43,20 @@ const JetClient: React.FC<JetClientProps> = ({
 
         reservations.forEach((reservation: any) => {
             const range = eachDayOfInterval({
-                start: new Date(reservation.startDate),
-                end: new Date(reservation.endDate)
+              start: new Date(reservation.startDate),
+              end: new Date(reservation.endDate)
             });
 
             dates = [...dates, ...range];
-        });
+    });
 
         return dates;
     }, [reservations]);
 
     const category = useMemo(() => {
-        return categories.find((items) =>
-            items.label === jet.category);
-    }, [jet.category]);
+        return categories.find((items) => 
+         items.label === jet.category);
+     }, [jet.category]);
 
     const [isLoading, setIsLoading] = useState(false);
     const [totalPrice, setTotalPrice] = useState(jet.price);
@@ -105,9 +105,9 @@ const JetClient: React.FC<JetClientProps> = ({
 
             if (dayCount && jet.price) {
                 setTotalPrice(dayCount * jet.price);
-            } else {
+              } else {
                 setTotalPrice(jet.price);
-            }
+              }
         }
     }, [dateRange, jet.price]);
 

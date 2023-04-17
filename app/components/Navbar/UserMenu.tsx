@@ -102,19 +102,19 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         <>
                         <MenuItem 
                           label="Mis viajes" 
-                          onClick={() => router.push('/trips')}
+                          onClick={() => router.push('/viajes')}
                         />
                         <MenuItem 
                           label="Mis favoritos" 
-                          onClick={() => router.push('/favorites')}
+                          onClick={() => router.push('/favoritos')}
                         />
                         <MenuItem 
                           label="Mis reservaciones" 
-                          onClick={() => router.push('/reservations')}
+                          onClick={() => router.push('/reservaciones')}
                         />
                         {currentUser.isAdmin === true && (<MenuItem 
                           label="Mis vuelos" 
-                          onClick={() => router.push('/properties')}
+                          onClick={() => router.push('/vuelos')}
                         />)}
                          {currentUser.isAdmin === true && (<MenuItem 
                           label="Agregar un jet nuevo" 
