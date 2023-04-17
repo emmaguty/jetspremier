@@ -43,7 +43,7 @@ const PropertiesClient: React.FC<PropertiesClientProps> = ({
     <Container>
       <Heading
         title="Jets"
-        subtitle="Lista de todos los Jets"
+        subtitle="Lista de los Jets que has agregado"
       />
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2
                       md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
