@@ -5,7 +5,7 @@ import getCurrentUser from "../actions/getCurrentUser";
 import getReservations from "../actions/getReservations";
 import TripsClient from "./TripsClient";
 
-const TripsPage = async () => {
+const ViajesPage = async () => {
     const currentUser = await getCurrentUser();
 
     if (!currentUser) {
@@ -26,7 +26,7 @@ const TripsPage = async () => {
               <ClientOnly>
                 <EmptyState
                   title="No se encontro ningun viaje"
-                  subtitle="Actualmente no tienes ningun viaje"
+                  subtitle="Actualmente no tienes ningun viaje reservado"
                 />
               </ClientOnly>
             );
@@ -43,4 +43,4 @@ const TripsPage = async () => {
         
 }
 
-export default TripsClient;
+export default ViajesPage;
