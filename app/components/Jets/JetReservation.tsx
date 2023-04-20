@@ -2,7 +2,7 @@
 
 import { Range } from "react-date-range";
 
-import Button from "../Button";
+import OrderButton from "../OrderButton";
 import Calendar from "../Inputs/Calendar";
 
 interface JetReservationProps {
@@ -45,11 +45,18 @@ const JetReservation: React.FC<JetReservationProps> = ({
             />
             <hr />
             <div className="p-4">
-                <Button 
+                {/* <OrderButton 
                     disabled={disabled}
                     label="Reservar ahora"
                     onClick={onSubmit}
+                /> */}
+                <OrderButton 
+                    disabled={disabled}
+                    label="Reservar Ahora"
+                    onClick={onSubmit}
                 />
+
+
             </div>
             <div className="p-4 flex flex-row items-center
                             justify-between font-semibold 

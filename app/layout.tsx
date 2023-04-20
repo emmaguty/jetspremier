@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/Modals/RegisterModal";
 import ToasterProvider from "./providers/ToaterProvider";
+import StripeProvider from "./providers/StripeProvider";
 import LoginModal from "./components/Modals/LoginModal";
 
 import getCurrentUser from './actions/getCurrentUser';
@@ -31,11 +32,13 @@ export default async function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <StripeProvider>
           <ToasterProvider />
           <RentModal />
           <LoginModal />
           <RegisterModal />
           <Navbar currentUser={currentUser} />
+          </StripeProvider>
         </ClientOnly>
 
         <div className="pb-20 pt-28">

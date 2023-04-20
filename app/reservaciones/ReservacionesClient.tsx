@@ -43,7 +43,7 @@ const ReservacionesClient: React.FC<ReservationsClientProps> = ({
     return (
         <Container>
             <Heading
-                title="Reservacione"
+                title="Reservaciones"
                 subtitle="Los Jets agregados por ti"
             />
             <div className="mt-20 grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 
